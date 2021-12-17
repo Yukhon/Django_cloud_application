@@ -79,3 +79,16 @@ def login_view(request):
             resp.set_cookie('uid', old_user.id, 3600 * 24 * 3)
 
         return resp
+
+
+def logout_view(request):
+    resp = HttpResponseRedirect('/index')
+    if request.session.get('username') and request.session.get('uid'):
+        print('delete session %s' % request.session.get('uid'))
+        del request.session['username']
+        del request.session['uid']
+    if request.COOKIES.get('username') and request.COOKIES.get('uid'):
+        print('delete cookie %s' % request.COOKIES.get('uid'))
+        resp.delete_cookie('uid')
+        resp.delete_cookie('username')
+    return resp
