@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<form method="post" action="/note/mod/{{note.id}}">
+    <p>
+    topic <input type="text" name="topic" value={{note.title}}>
+    <input type="submit" value="save">
+    <a href="/note/all">back to note list</a>
+    </p>
+
+    <p>
+    <textarea name="content" cols="30" rows="10"></textarea>
+    </p>
+</form>
+</body>
+</html>

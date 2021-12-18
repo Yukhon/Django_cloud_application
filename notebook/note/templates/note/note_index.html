@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>note_index</title>
+</head>
+<body>
+<p>
+    Welcome {{s_name}}
+    <a href="/note/add_note">add new notes</a>
+    <a href="/index">back to index</a>
+</p>
+<table border="0">
+    <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>created_time</th>
+        <th>updated_time</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+    {% for note in notes %}
+        {% if note.is_active %}
+            <tr>
+                <td>{{note.id}}</td>
+                <td>{{note.title}}</td>
+                <td>{{note.created_time}}</td>
+                <td>{{note.updated_time}}</td>
+                <td><a href="/note/mod/{{note.id}}">update</a></td>
+                <td><a href="/note/del/{{note.id}}">delete</a></td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+</body>
+</html>
