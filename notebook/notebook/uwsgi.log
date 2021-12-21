@@ -697,3 +697,6 @@ Mymw2 process_views do ---
 MyMW2 process_response do ---
 MyMW process_response do ---
 [pid: 40993|app: 0|req: 4/4] 127.0.0.1 () {42 vars in 845 bytes} [Mon Dec 20 04:39:52 2021] GET /admin/login/?next=/admin/ => generated 1819 bytes in 62 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
